@@ -8,7 +8,7 @@ import time
 import random
 
 # --- CONFIGURATION ---
-TARGET_LINK = "https://abr.ge/9gsx3c"
+TARGET_LINK = "https://riazalishahani.blogspot.com/"
 TOTAL_CLICKS_TO_DO = random.randint(10, 15) # Har run mein 10 se 15 clicks honge
 
 def run_ultra_safe_bot():
