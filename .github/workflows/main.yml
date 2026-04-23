@@ -1,0 +1,30 @@
+name: Safe Ad Clicker
+
+on:
+  schedule:
+    - cron: '45 * * * *' # Har ek ghante mein sirf ek baar chalega (Best for safety)
+  workflow_dispatch:
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
+        run: |
+          pip install undetected-chromedriver selenium-stealth selenium
+
+      - name: Install Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+
+      - name: Run Script
+        run: python bot.py
