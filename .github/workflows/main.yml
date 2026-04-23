@@ -1,8 +1,7 @@
 name: Safe Ad Clicker
-
 on:
   schedule:
-    - cron: '45 * * * *' # Har ek ghante mein sirf ek baar chalega (Best for safety)
+    - cron: '45 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -19,12 +18,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install undetected-chromedriver selenium-stealth selenium
-
-      - name: Install Chrome
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+          pip install undetected-chromedriver selenium-stealth selenium webdriver-manager
 
       - name: Run Script
         run: python bot.py
